@@ -8,7 +8,9 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: flutter 
+  webview_flutter: ^4.7.0
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:

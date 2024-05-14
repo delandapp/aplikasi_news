@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 class Article {
@@ -9,16 +10,6 @@ class Article {
   final String publishedAt;
   final String content;
 
-  factory Article.fromJson(Map<String, dynamic> article) => Article(
-        author: article['author'],
-        title: article['title'],
-        description: article['description'],
-        url: article['url'],
-        urlToImage: article['urlToImage'],
-        publishedAt: article['publishedAt'],
-        content: article['content'],
-      );
-
   Article({
     required this.author,
     required this.title,
@@ -28,6 +19,16 @@ class Article {
     required this.publishedAt,
     required this.content,
   });
+
+  factory Article.fromJson(Map<String, dynamic> article) => Article(
+        author: article['author'],
+        title: article['title'],
+        description: article['description'],
+        url: article['url'],
+        urlToImage: article['urlToImage'],
+        publishedAt: article['publishedAt'],
+        content: article['content'],
+      );
 }
 
 List<Article> parseArticles(String? json) {
