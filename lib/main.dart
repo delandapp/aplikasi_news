@@ -1,20 +1,29 @@
+import 'package:dicoding_news_app/class/article.dart';
+import 'package:dicoding_news_app/pages/news_detail_page.dart';
+import 'package:dicoding_news_app/pages/news_list_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() {  
+  runApp(const MyApp());
 }
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+ 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+ 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'News App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialRoute: '/newslist',
+      routes: {
+        NewsListPage.routeName: (context) => const NewsListPage(),
+        ArticleDetailPage.routeName: (context) => ArticleDetailPage(article: ModalRoute.of(context)?.settings.arguments as Article,),
+      },
     );
   }
 }
