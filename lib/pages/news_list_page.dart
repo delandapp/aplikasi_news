@@ -1,4 +1,4 @@
-import 'package:dicoding_news_app/class/api.dart';
+import 'package:dicoding_news_app/data/class/api.dart';
 import 'package:dicoding_news_app/data/models/response_news.dart';
 import 'package:dicoding_news_app/pages/news_detail_page.dart';
 import 'package:dicoding_news_app/widget/card_article.dart';
